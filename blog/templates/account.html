@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<div class="container">
+    <h1>Account</h1>
+    <img src="static/profile_picture/{{current_user.profile_image}}">
+    <p>Name: {{ current_user.name }}</p>
+    <p>Email: {{ current_user.email }}</p>
+    </div>
+
+<div class="container">
+
+  <form method = "POST" action="" enctype="multipart/form-data">
+
+    {{form.hidden_tag()}}
+
+    <div class="form-group">
+
+      {{form.email.label(class="form-control-label")}}
+
+      {{form.email(class="form-control", placeholder="Email")}}
+
+    </div>
+
+    <div class="form-group">
+
+      {{form.name.label(class="form-control-label")}}
+
+      {{form.name(class="form-control", placeholder="First Name")}}
+
+    </div>
+
+    <div class="form-group">
+
+      {{form.picture.label(class="form-control-label")}}
+
+      {{form.picture(class="form-control", placeholder="Profile Picture")}}
+    
+    </div>
+
+    <div class="form-group">
+
+      {{form.submit(class="btn btn-primary")}}
+
+    </div>
+
+
+  </form>
+
+</div>
+
+
+
+
+
+{% endblock %}
